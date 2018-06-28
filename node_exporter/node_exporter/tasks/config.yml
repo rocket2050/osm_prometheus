@@ -1,0 +1,15 @@
+---
+
+- name: Running node-exporter
+  file:
+   path: /etc/systemd/system/node_exporter.service
+   state: touch
+   mode: 0755
+
+- name: copying files
+  template:
+   src: node_exporter
+   dest: /etc/systemd/system/node_exporter.service
+   mode: 0755
+
+

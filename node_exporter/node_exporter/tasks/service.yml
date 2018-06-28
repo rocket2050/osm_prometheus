@@ -1,0 +1,17 @@
+---
+
+- name: Configuring service
+  systemd:
+    name: node_exporter
+    daemon_reload: yes
+
+- name: enable service node-exporter and ensure it is not masked
+  systemd:
+    name: node_exporter
+    enabled: yes
+    masked: no
+   
+- name: Start node_exporter service
+  service: 
+    name: node_exporter
+    state: started

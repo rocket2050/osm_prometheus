@@ -1,0 +1,7 @@
+---
+
+- name: restart node_exporter
+  systemd:
+    name: node_exporter.service
+    state: restarted
+  when: node_exporter_service_state != 'stopped'
