@@ -6,6 +6,12 @@
       repo: deb https://packagecloud.io/grafana/stable/debian/ stretch main
       state: present
 
+#Adding Package Cloud key. This will allow to install signed packages.
+  - name: Add Apt signing key
+    apt_key:
+      url: https://packagecloud.io/gpg.key
+      state: present
+
 #Updating APT Repository
   - name: apt-get update
     apt:
@@ -27,6 +33,7 @@
     apt:
       name: grafana
       state: latest
+      force: yes
     become: true
 
   - name: Start grafana service
