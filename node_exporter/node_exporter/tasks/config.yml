@@ -12,8 +12,6 @@
    dest: /etc/systemd/system/node_exporter.service
    mode: 0755
 
-- debug: var=ansible_enp0s8.ipv4.address
-
 - name: adding to prometheus.yml
   lineinfile:
    dest: /etc/prometheus/prometheus.yml
