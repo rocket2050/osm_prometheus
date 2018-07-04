@@ -1,19 +1,19 @@
 ---
-  - hosts: prometheus
-    roles:
-      - role: /home/tj/Documents/PGOdmont/prometheus/prometheus
-    become: true
-
-  - hosts: grafana
-    roles:
-      - role: /home/tj/Documents/PGOdmont/grafana/grafana
-    become: true
-
-  - hosts: node
-    roles:
-      - role: /home/tj/Documents/PGOdmont/node_exporter/node_exporter
-    become: true
-
+#  - hosts: prometheus
+#    roles:
+#      - role: /home/tj/Documents/PGOdmont/prometheus/prometheus
+#    become: true
+#
+#  - hosts: grafana
+#    roles:
+#      - role: /home/tj/Documents/PGOdmont/grafana/grafana
+#    become: true
+#
+#  - hosts: node
+#    roles:
+#      - role: /home/tj/Documents/PGOdmont/node_exporter/node_exporter
+#    become: true
+#
   - hosts: prometheus
     roles:
       - role: /home/tj/Documents/PGOdmont/updation

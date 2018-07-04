@@ -1,0 +1,23 @@
+---
+
+- name: Configuring prometheus.yml
+  template:
+    src: main.yml.j2
+    dest: /etc/prometheus/prometheus.yml
+    owner: prometheus
+    group: prometheus
+  tags: updation
+
+- name: Reload Daemon
+  become: true
+  systemd: daemon_reload=yes
+  tags: reload_daemon
+  remote_src: yes
+
+- name: Start Prometheus service
+  become: true
+  service:
+    name: prometheus.service
+    state: restarted
+  tags: prom.start
+  remote_src: yes
