@@ -1,0 +1,11 @@
+- name: adding to prometheus.yml
+  lineinfile:
+   dest: /etc/prometheus/prometheus.yml
+   backup: True
+   insertafter: EOF
+   state: present
+   line: |
+        - job_name: 'node_exporter'
+          scrape_interval: 5s
+          static_configs:
+            - targets: ["{{ ansible_enp0s8.ipv4.address }}":9100]

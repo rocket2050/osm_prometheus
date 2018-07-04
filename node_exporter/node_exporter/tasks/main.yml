@@ -7,8 +7,15 @@
 
 - name: NODE_EXPORTER Configure
   import_tasks: config.yml
+#  when: inventory_hostname in groups['node'][0]
   tags:
     - configure
+
+#- name: NODE_EXPORTER Configure
+#  import_tasks: config.yml
+#  when: inventory_hostname in groups['node'][1]
+#  tags:
+#    - configure
 
 - name: NODE_EXPORTER Service
   import_tasks: service.yml

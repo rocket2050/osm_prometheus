@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: prometheus
   become: true
   roles:
     - role: node_exporter

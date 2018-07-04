@@ -26,16 +26,9 @@
   command: cp -r /opt/node_exporter-0.15.1.linux-amd64/node_exporter /usr/local/bin
   remote_src: yes
 
-- name: Chnaging ownership of node_exporter
+- name: Changing ownership of node_exporter
   file:
    path: /usr/local/bin/node_exporter
    owner: node_exporter
    group: node_exporter
    mode: 755
-
-
-
-
-
-
-

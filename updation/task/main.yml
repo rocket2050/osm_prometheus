@@ -1,0 +1,8 @@
+---
+- name: updating prometheus.yml files
+  template:
+    src: prometheus.yml
+    dest: /etc/prometheus/
+    owner: prometheus
+    group: prometheus
+  tags: updation

@@ -1,6 +1,6 @@
 ---
 
-- hosts: all
+- hosts: grafana
   roles:
    - role: grafana
   become: true
