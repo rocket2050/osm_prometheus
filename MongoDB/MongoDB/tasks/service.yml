@@ -1,0 +1,17 @@
+---
+
+- name: Configuring service
+  systemd:
+    name: mongodb-exporter
+    daemon_reload: yes
+
+- name: enable service mongodb-exporter and ensure it is not masked
+  systemd:
+    name: mongodb-exporter
+    enabled: yes
+    masked: no
+
+- name: Start mongodb-exporter service
+  service:
+    name: mongodb-exporter
+    state: started

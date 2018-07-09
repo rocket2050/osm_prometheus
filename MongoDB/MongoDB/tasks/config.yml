@@ -1,0 +1,13 @@
+---
+
+- name: Running MongoDB_exporter
+  file:
+   path: /etc/systemd/system/mongodb-exporter.service
+   state: touch
+   mode: 0755
+
+- name: copying files
+  template:
+   src: mongodb-exporter
+   dest: /etc/systemd/system/mongodb-exporter.service
+   mode: 0755
