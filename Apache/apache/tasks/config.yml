@@ -1,0 +1,13 @@
+---
+
+- name: Running Apache exporter
+  file:
+   path: /etc/systemd/system/apache-exporter.service
+   state: touch
+   mode: 0755
+
+- name: copying files
+  template:
+   src: apache-exporter
+   dest: /etc/systemd/system/apache-exporter.service
+   mode: 0755
