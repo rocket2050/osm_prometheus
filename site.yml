@@ -14,6 +14,21 @@
       - role: /home/tj/Documents/PGOdmont/node_exporter/node_exporter
     become: true
 
+  - hosts: node
+    roles:
+      - role: /home/tj/Documents/PGOdmont/MongoDB/MongoDB
+    become: true
+
+  - hosts: node
+    roles:
+      - role: /home/tj/Documents/PGOdmont/nginx-vts-exporter/nginx-exporter
+    become: true
+
+  - hosts: node
+    roles:
+      - role: /home/tj/Documents/PGOdmont/MySQL/MySQL
+    become: true
+
   - hosts: prometheus
     roles:
       - role: /home/tj/Documents/PGOdmont/updation
