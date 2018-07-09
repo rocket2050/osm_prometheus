@@ -1,0 +1,13 @@
+---
+
+- name: Running nginx exporter
+  file:
+   path: /etc/systemd/system/nginx-vts-exporter.service
+   state: touch
+   mode: 0755
+
+- name: copying files
+  template:
+   src: nginx-vts-exporter
+   dest: /etc/systemd/system/nginx-vts-exporter.service
+   mode: 0755

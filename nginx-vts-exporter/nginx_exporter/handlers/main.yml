@@ -1,0 +1,7 @@
+---
+
+- name: restart nginx-vts-exporter
+  systemd:
+    name: nginx-vts-exporter.service
+    state: restarted
+  when: nginx-vts-exporter_service_state != 'stopped'

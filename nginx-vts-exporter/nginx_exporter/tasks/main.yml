@@ -1,0 +1,16 @@
+---
+
+- name: nginx-vts-exporter Install
+  import_tasks: install.yml
+  tags:
+    - install
+
+- name: nginx-vts-exporter Configure
+  import_tasks: config.yml
+  tags:
+    - configure
+
+- name: nginx-vts-exporter Service
+  import_tasks: service.yml
+  tags:
+    - service
