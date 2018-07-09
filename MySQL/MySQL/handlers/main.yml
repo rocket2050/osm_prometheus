@@ -1,0 +1,7 @@
+---
+
+- name: restart mysql_exporter
+  systemd:
+    name: mysql-exporter.service
+    state: restarted
+  when: mysql-exporter_service_state != 'stopped'

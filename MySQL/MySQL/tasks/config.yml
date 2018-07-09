@@ -1,0 +1,13 @@
+---
+
+- name: Running MySQL exporter
+  file:
+   path: /etc/systemd/system/mysql-exporter.service
+   state: touch
+   mode: 0755
+
+- name: copying files
+  template:
+   src: mysql-exporter
+   dest: /etc/systemd/system/mysql-exporter.service
+   mode: 0755
