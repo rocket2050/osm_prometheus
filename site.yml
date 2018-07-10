@@ -21,8 +21,15 @@
 
   - hosts: node
     roles:
-      - role: /home/tj/Documents/PGOdmont/nginx-vts-exporter/nginx-exporter
+      - role: /home/tj/Documents/PGOdmont/Apache/apache
     become: true
+    tags: apache
+
+  - hosts: node
+    roles:
+      - role: /home/tj/Documents/PGOdmont/nginx-vts-exporter/nginx_exporter
+    become: true
+    tags: nginx
 
   - hosts: node
     roles:

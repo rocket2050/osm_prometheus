@@ -1,5 +1,5 @@
 ---
-- hosts: prometheus
+- hosts: node
   become: true
   roles:
     - role: MongoDB

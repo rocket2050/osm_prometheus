@@ -1,5 +1,5 @@
 ---
-- hosts: nginx
+- hosts: node
   become: true
   roles:
     - role: nginx_exporter
