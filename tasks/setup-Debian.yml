@@ -12,19 +12,14 @@
   file:
    path: /etc/prometheus
    path: /var/lib/prometheus
-   state: directory
+   state  : directory
    mode: 0755
    owner: prometheus
    group: prometheus
 
-- name: Download Prometheus
-  get_url:
-   url: https://github.com/prometheus/prometheus/releases/download/v2.0.0/prometheus-2.0.0.linux-amd64.tar.gz
-   dest: /opt
-
 - name: Unarchive prometheus
   unarchive:
-    src: /opt/prometheus-2.0.0.linux-amd64.tar.gz
+    src: https://github.com/prometheus/prometheus/releases/download/v2.0.0/prometheus-2.0.0.linux-amd64.tar.gz
     dest: /opt/
     remote_src: yes
   tags:
@@ -52,14 +47,14 @@
   tags: console_lib
 
 - name: Change ownership
-  file: 
+  file:
     path: "{{ item }}"
     owner: prometheus
     group: prometheus
     recurse: yes
   with_items:
     -  /opt/prometheus/console_libraries
-    -  /opt/prometheus/consoles 
+    -  /opt/prometheus/consoles
 
 - name: Configuring prometheus.yml
   template:
@@ -81,7 +76,7 @@
   systemd: daemon_reload=yes
   tags: reload_daemon
   remote_src: yes
-  
+
 - name: Start Prometheus service
   become: true
   service:

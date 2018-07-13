@@ -2,5 +2,5 @@
 
 - hosts: prometheus
   roles:
-    - role: prometheus
+    - role: /home/tj/Documents/tejas/osm_prometheus
   become: true
