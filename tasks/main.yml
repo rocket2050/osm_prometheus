@@ -1,5 +1,11 @@
 ---
+# tasks file for prometheus
+- name: Install prometheus on Debian
+  include: debian.yml
+  when:
+    ansible_os_family == "Debian"
 
-- include: setup-Debian.yml
-  when: ansible_os_family == 'Debian'
-  tags: task_debian
+- name: Install prometheus on RedHat
+  include: redhat.yml
+  when:
+    ansible_os_family == "RedHat"
